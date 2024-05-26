@@ -10,12 +10,10 @@ namespace ClickNext.Scripts.UI.Managers.Templates
     {
         public TMP_Text DisplayName;
         public Button RemoveButton;
-
         [SerializeField] private TaskPriority taskPriorityTemplate;
-
         private void Awake() =>
-
             taskPriorityTemplate.gameObject.SetActive(false);
+
         public void AssignPriorities(Worker worker, PrioritySelector prioritySelector)
         {
             var tasks = worker.GetComponents<ITask>();

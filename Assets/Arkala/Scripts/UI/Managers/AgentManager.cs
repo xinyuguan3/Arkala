@@ -11,6 +11,7 @@ namespace ClickNext.Scripts.UI.Managers
         [SerializeField]
         [Multiline(5)]
         public string[] memories;
+        public MemoryTemplate memoryTemplate;
 
         private new void Awake()
         {
@@ -20,6 +21,18 @@ namespace ClickNext.Scripts.UI.Managers
 
         void Start(){
             gameObject.SetActive(false);
+        }
+
+        private void UpdateMemory()
+        {
+            foreach (var memory in memories)
+            {
+                var memoryBubble = Instantiate(memoryTemplate, memoryTemplate.transform.parent, true);
+                memoryBubble.MemoryText.text = memory;
+                // memoryBubble.RecentTime.text = System.DateTime.Now.ToString("HH:mm:ss");
+                memoryBubble.RecentTime.text = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            
         }
 
         //将控制的面板设置为相反的可见状态

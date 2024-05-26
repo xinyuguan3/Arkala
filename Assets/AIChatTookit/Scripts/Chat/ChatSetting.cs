@@ -7,18 +7,18 @@ using UnityEngine;
 public class ChatSetting
 {
     /// <summary>
-    /// 聊天模型
+    /// 鑱婂ぉ妯″瀷
     /// </summary>
-    [Header("根据需要挂载不同的llm脚本")]
+    [Header("鏍规嵁闇�瑕佹寕杞戒笉鍚岀殑llm鑴氭湰")]
     [SerializeField] public LLM m_ChatModel;
     /// <summary>
-    /// 语音合成服务
+    /// 璇煶鍚堟垚鏈嶅姟
     /// </summary>
-    [Header("语音合成脚本")]
+    [Header("璇煶鍚堟垚鑴氭湰")]
     public TTS m_TextToSpeech;
     /// <summary>
-    /// 语音识别服务
+    /// 璇煶璇嗗埆鏈嶅姟
     /// </summary>
-    [Header("语音识别脚本")]
+    [Header("璇煶璇嗗埆鑴氭湰")]
     public STT m_SpeechToText;
 }

@@ -82,10 +82,12 @@ public class ChatSample : MonoBehaviour
     /// </summary>
     public void SendData()
     {
+        //如果内容为空就不发
         if (m_InputWord.text.Equals(""))
             return;
 
-        if (m_CreateVoiceMode)//合成输入为语音
+        //调用回调函数，合成输入为语音
+        if (m_CreateVoiceMode)
         {
             CallBack(m_InputWord.text);
             m_InputWord.text = "";

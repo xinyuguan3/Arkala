@@ -42,7 +42,7 @@ public class LLM:MonoBehaviour
     /// </summary>
     [SerializeField] protected Stopwatch stopwatch=new Stopwatch();
     /// <summary>
-    /// 发送消息
+    /// 发送消息的主方法
     /// </summary>
     public virtual void PostMsg(string _msg,Action<string> _callback) {
         //上下文条数设置
@@ -57,6 +57,7 @@ public class LLM:MonoBehaviour
         //缓存发送的信息列表
         m_DataList.Add(new SendData("user", message));
 
+        //开始携程，向对应的大语言模型发出请求
         StartCoroutine(Request(message, _callback));
 
         //TODO:显示对话气泡
